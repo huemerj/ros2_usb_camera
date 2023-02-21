@@ -39,7 +39,14 @@ def generate_launch_description():
             executable='usb_camera_driver_node',
             namespace='/camera',
             parameters=[
-                {"camera_calibration_file": LaunchConfiguration('camera_calibration_file')}
+                {"camera_calibration_file": LaunchConfiguration('camera_calibration_file'),
+                 "camera_id": 1,
+                 "fps": 10.0,
+                 "image_width": 1280,
+                 "image_height": 720,
+                 "frame_id": "world"
+                 },
+
             ]
         )
     ])
